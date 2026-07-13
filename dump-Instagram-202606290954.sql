@@ -52,7 +52,7 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.publicaciones (
     id integer NOT NULL,
-    id_usuario integer NOT NULL,
+    usuario_id integer NOT NULL,
     url_imagen character varying NOT NULL,
     descripcion text,
     likes integer DEFAULT 0,
@@ -186,7 +186,7 @@ ALTER TABLE ONLY public.usuarios
 --
 
 ALTER TABLE ONLY public.publicaciones
-    ADD CONSTRAINT publicaciones_usuarios_fk FOREIGN KEY (id) REFERENCES public.usuarios(id) ON DELETE CASCADE;
+    ADD CONSTRAINT publicaciones_usuarios_fk FOREIGN KEY (usuario_id) REFERENCES public.usuarios(id) ON DELETE CASCADE;
 
 
 -- Completed on 2026-06-29 09:54:29
